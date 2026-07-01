@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="512" height="512">
+  <!-- Exact reproduction of the original option C ("गुल्लक · Savings pot") badge, full-bleed white for the home-screen tile -->
+  <rect width="72" height="72" rx="16" fill="#ffffff"/>
+  <rect x="30" y="16.5" width="12" height="6" rx="2" fill="#b45309"/>
+  <rect x="33" y="14.5" width="6" height="2.6" rx="1.3" fill="#78350f"/>
+  <path d="M20,42 Q20,25 36,25 Q52,25 52,42 Q52,57 36,57 Q20,57 20,42 Z" fill="#d97706"/>
+  <text x="36" y="47" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="Arial,sans-serif">₹</text>
+  <circle cx="16" cy="23" r="3.4" fill="#f59e0b"/>
+</svg>
