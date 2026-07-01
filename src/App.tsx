@@ -53,9 +53,9 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center gap-3 py-4 px-3">
+    <div className="flex flex-col h-[100dvh] overflow-hidden bg-slate-100 sm:h-auto sm:min-h-screen sm:overflow-visible sm:items-center sm:gap-3 sm:py-4 sm:px-3">
       {/* role toggle */}
-      <div className="flex gap-2 bg-slate-200 p-1 rounded-lg">
+      <div className="shrink-0 self-center flex gap-2 bg-slate-200 p-1 rounded-lg mt-3 mb-2 sm:my-0">
         {(["admin", "member"] as Role[]).map((r) => (
           <button
             key={r}
@@ -69,9 +69,9 @@ export default function App() {
         ))}
       </div>
 
-      {/* phone frame */}
-      <div className="relative w-[360px] max-w-full bg-white border border-slate-200 rounded-[28px] overflow-hidden shadow-lg">
-        <header className="bg-fund text-white px-4 py-3.5 flex items-center justify-between">
+      {/* phone frame — full-screen on mobile, framed card on desktop */}
+      <div className="relative flex flex-col flex-1 w-full min-h-0 bg-white overflow-hidden sm:flex-none sm:w-[360px] sm:max-w-full sm:rounded-[28px] sm:border sm:border-slate-200 sm:shadow-lg">
+        <header className="shrink-0 bg-fund text-white px-4 py-3.5 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <Logo size={32} />
             <div>
@@ -107,7 +107,7 @@ export default function App() {
           </div>
         )}
 
-        <main className="h-[440px] overflow-y-auto p-3.5 bg-slate-50">
+        <main className="flex-1 min-h-0 overflow-y-auto p-3.5 bg-slate-50 sm:flex-none sm:h-[440px]">
           {!ready ? (
             <div className="p-4 text-slate-500">…</div>
           ) : role === "admin" ? (
@@ -136,7 +136,7 @@ export default function App() {
         </main>
 
         {/* tab bar */}
-        <nav className="flex border-t border-slate-200 bg-white">
+        <nav className="shrink-0 flex border-t border-slate-200 bg-white pb-[env(safe-area-inset-bottom)]">
           {role === "admin"
             ? adminTabs.map(([t, label, icon]) => {
                 const active = adminTab === t && !showSettings;
@@ -191,7 +191,7 @@ export default function App() {
         <div id="phone-modal-root" />
       </div>
 
-      <div className="text-xs text-slate-400 text-center max-w-[360px]">
+      <div className="hidden sm:block text-xs text-slate-400 text-center max-w-[360px]">
         ApnaSamuh · डेटा फ़ोन में सुरक्षित (offline-first)
       </div>
     </div>
